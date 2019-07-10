@@ -135,11 +135,7 @@ fn generate_network(
         listen: p2p.listen.clone(),
         trusted_peers: p2p.trusted_peers.clone().unwrap_or(vec![]),
         protocol: Protocol::Grpc,
-        subscriptions: config
-            .peer_2_peer
-            .topics_of_interests
-            .clone()
-            .unwrap_or(BTreeMap::new()),
+        subscriptions: config.peer_2_peer.topics.clone().unwrap_or(BTreeMap::new()),
         timeout: std::time::Duration::from_secs(15),
     }
 }
