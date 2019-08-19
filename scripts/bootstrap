@@ -241,6 +241,9 @@ storage: "${STORAGE}/"
 rest:
   listen: "${REST_DEST}"
 
+logger:
+  verbosity: 4
+
 p2p:
   trusted_peers: []
   public_address: "/ip4/${REST_HOST}/tcp/8299"
@@ -308,5 +311,6 @@ else
     process_file "$SCRIPTPATH/faucet-send-money.shtempl" faucet-send-money.sh
     process_file "$SCRIPTPATH/faucet-send-certificate.shtempl" faucet-send-certificate.sh
     process_file "$SCRIPTPATH/create-account-and-delegate.shtempl" create-account-and-delegate.sh
+    process_file "$SCRIPTPATH/one-transaction-per-slot-1-account.shtempl" one-transaction-per-slot-1-account.sh
     exit 0
 fi
